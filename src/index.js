@@ -2,7 +2,7 @@ import Constants from "./constants";
 import {allSkiDays, goal} from "./initialState.json";
 
 //Los reducers han de importarse para usarse
-import {goal_redux, all_ski_days_redux} from "./store/reducers";
+import {goal_redux, all_ski_days_redux, all_ski_days_remove_redux} from "./store/reducers";
 
 console.log(`
         Datos en initialState.json
@@ -34,7 +34,7 @@ const goal_action = {
     "payload": 15
 };
 
-const all_ski_days_state = allSkiDays
+const all_ski_days_state = allSkiDays;
 const all_ski_days_action = {
     "type":Constants.ADD_DAY,
     "payload": {
@@ -43,13 +43,20 @@ const all_ski_days_action = {
         "powder":false,
         "backcountry":false
     }
+};
+
+const index = 1;
+const all_ski_days_remove_action = {
+    "type": Constants.REMOVE_DAY,
+    "payload": index
 }
 
 //mediante el reducer modificamos el state=10 a 15
 console.log(
     `Cambiado el objetivo(goal)`,
     goal_redux(goal_state, goal_action),
-    `Añadido un nuevo día`,
-    all_ski_days_redux(all_ski_days_state , all_ski_days_action)
-
+    `\nAñadido un nuevo día: `,
+    all_ski_days_redux(all_ski_days_state , all_ski_days_action), //la variable state no se actualilza
+    `\nSe ha eliminado el elemento ${index}: `,
+    all_ski_days_remove_redux(all_ski_days_state, all_ski_days_remove_action) //queda almacenar los cambios
 );
