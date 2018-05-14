@@ -1,0 +1,29 @@
+{
+    "allSkiDays": [
+        {
+            "resort":"Alpine",
+            "date":"20/12/2017",
+            "powder":true,
+            "backcountry":true
+        },
+        {
+            "resort":"Caverns",
+            "date":"23/12/2017",
+            "powder":false,
+            "backcountry":false
+        },
+        {
+            "resort":"Snowflakes View",
+            "date":"24/12/2017",
+            "powder":true,
+            "backcountry":false
+        }
+    ],
+    
+    "goal":10,
+
+    "resortNames":{
+        "fetching":false,
+        "suggestions":["Alpine", "Caverns","Snowflakes View"]
+    }
+}
